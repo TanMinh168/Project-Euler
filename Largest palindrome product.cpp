@@ -10,6 +10,7 @@ int main() {
     for (int i = 999; i >= 100; i--) {
         for (int j = 999; j >= 100; j--) {
             p = i * j;
+            if (p <= maximum) continue;
             s = to_string(p);
             int index = 3;
             int flag = 0;
@@ -17,7 +18,7 @@ int main() {
                 if (s[index] != s[5 - index]) break;
                 flag++;
             }
-            if (flag == 3) maximum = max(maximum, p);
+            if (flag == 3) maximum = p;
         }
     }
     cout << maximum;
