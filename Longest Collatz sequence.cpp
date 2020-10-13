@@ -14,8 +14,8 @@ int main() {
 			cnt+=2;
 		}
 		if (cnt > maximum) {
-            ans = i;
-            maximum = cnt;
+            		ans = i;
+            		maximum = cnt;
 		}
 	}
 	cout << ans;
