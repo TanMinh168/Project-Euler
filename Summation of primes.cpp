@@ -24,7 +24,6 @@ int main() {
     for (int i = 1; i < 2000000; i+=2) {
         if (isPrime(i)) {
             sum += i;
-            cout << i << " " << sum << endl;
         }
     }
     cout << sum;
