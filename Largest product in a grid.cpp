@@ -30,6 +30,7 @@ int main() {
             if(tmp > maximum) maximum = tmp;
             
             if (j > 3) {
+                //product of four adjacent in left diagonal direction
                 tmp = a[i][j] * a[i+1][j-1] * a[i+2][j-2] * a[i+3][j-3];
                 if(tmp > maximum) maximum = tmp;
             }
