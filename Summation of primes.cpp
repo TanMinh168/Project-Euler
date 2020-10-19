@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 bool isPrime(int n) {
     if (n == 1) return false;
     if (n < 4) return true;
@@ -16,7 +15,6 @@ bool isPrime(int n) {
     }
     return true;
 }
-
 int main() {
     ios::sync_with_stdio(false); cin.tie(0);
     cout.tie(0);
