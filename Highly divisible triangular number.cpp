@@ -18,7 +18,6 @@ int main() {
     cout.tie(0);
     int i = 1;
     int sum = 0;
-    cout << findNumberDivisors(76576500) << endl;
     while (findNumberDivisors(sum + i) <= 500) {
         sum += i++;
     }

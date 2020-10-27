@@ -7,7 +7,6 @@ int main() {
     long long p = 2;
     for (long long i = 3; i <= 20; i++) {
         p = (p * i) / __gcd(p, i);
-    cout << p << endl;
     }
     cout << p;
     return 0;

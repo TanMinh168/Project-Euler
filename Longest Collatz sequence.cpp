@@ -18,8 +18,8 @@ int main() {
 			}
 		}
 		if (cnt > maximum) {
-            ans = i;
-            maximum = cnt;
+            		ans = i;
+            		maximum = cnt;
 		}
 	}
 	cout << ans << " " << maximum;
