@@ -9,14 +9,18 @@ int main() {
 		tmp = i;
 		cnt = 0;
 		while (tmp > 1) {
-			if (tmp % 2 == 0) tmp /= 2;
-			else tmp = ((3 * tmp) + 1) >> 1;
-			cnt+=2;
+			if (tmp % 2 == 0) {
+                tmp /= 2;
+                cnt++;
+			} else {
+                tmp = ((3 * tmp) + 1) >> 1;
+                cnt += 2;
+			}
 		}
 		if (cnt > maximum) {
             ans = i;
             maximum = cnt;
 		}
 	}
-	cout << ans;
+	cout << ans << " " << maximum;
 }
