@@ -10,11 +10,11 @@ int main() {
 		cnt = 0;
 		while (tmp > 1) {
 			if (tmp % 2 == 0) {
-                tmp /= 2;
-                cnt++;
+                		tmp /= 2;
+                		cnt++;
 			} else {
-                tmp = ((3 * tmp) + 1) >> 1;
-                cnt += 2;
+                		tmp = ((3 * tmp) + 1) >> 1;
+                		cnt += 2;
 			}
 		}
 		if (cnt > maximum) {
