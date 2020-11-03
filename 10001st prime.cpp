@@ -17,18 +17,21 @@ bool isPrime(long long n) {
     return true;
 }
 
+long long findNearestPrime(long long x) {
+    if (x % 2 == 0) x += 1;
+    while (!isPrime(x)) {
+        x += 2;
+    }
+    return x;
+}
+
 int main() {
     ios::sync_with_stdio(false); cin.tie(0);
     cout.tie(0);
-    int cnt = 1;
-    long long n = 3;
-    while(cnt < 1e4 + 1) {
-        if (isPrime(n)) {
-            cnt++;
-            cout << n << endl;
-        }
-        n += 2;
-    }
-    cout << n - 2 << endl;
+    long long n;
+    cin >> n;
+    long long s = ceil(sqrt(n));
+    long long res = findNearestPrime(s);
+    cout << res * res;
     return 0;
 }
