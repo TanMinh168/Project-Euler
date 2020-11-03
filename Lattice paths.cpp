@@ -12,7 +12,7 @@ int main() {
         dp[gridSize][i] = 1;
     }
 
-    ///base case
+    ///recursion 
     for (int i = gridSize - 1; i >= 0; i--) {
         for (int j = gridSize - 1; j >= 0; j--) {
             dp[i][j] = dp[i+1][j] + dp[i][j+1];
