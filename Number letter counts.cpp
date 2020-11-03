@@ -5,13 +5,12 @@ int unit;
 
 void toLetter(int n) {
     stack<string> s;
-    //int cnt = 0;
-    int id = 0;
-    bool flag1;
-    bool flag2;
+    int id = 0; // biến theo dõi đang ở hàng nào 0: đơn vị, 1: chục, 2: trăm
+    bool flag1; // biến đánh dấu tồn tại từ thể hiện hàng đơn vị
+    bool flag2; // biến đánh dấu tồn tại từ thể hiện hàng chục
     while (n > 0) {
         if (id == 0 || id == 2) {
-            if (id == 0) unit = n % 10;
+            if (id == 0) unit = n % 10; // lưu chữ số hàng đơn vị
             switch (n % 10) {
                 case 1: s.push("one"); cnt += 3; break;
                 case 2: s.push("two"); cnt += 3; break;
@@ -22,12 +21,12 @@ void toLetter(int n) {
                 case 7: s.push("seven"); cnt += 5; break;
                 case 8: s.push("eight"); cnt += 5; break;
                 case 9: s.push("nine"); cnt += 4; break;
-                default: s.push(""); flag1 = true;
+                default: s.push(""); flag1 = true; //đánh dấu tồn tại từ thể hiện hàng đơn vị
             }
-        } else if (id == 1) {
+        } else if (id == 1) { // hàng chục
             switch (n % 10) {
-                case 1: {
-                    s.pop();
+                case 1: { // trường hợp là số 10 -> 19
+                    s.pop(); // lấy phần tử hàng đơn vị ra khỏi stack
                     switch (unit) {
                         case 1: s.push("eleven"); cnt += 3; break;
                         case 2: s.push("twelve"); cnt += 3; break;
@@ -56,19 +55,18 @@ void toLetter(int n) {
         id++;
     }
     while (!s.empty()) {
-        cout << s.top() << " ";
+        cout << s.top();
         s.pop();
-        if (id == 3) {
-            cout << "hundred";
+        if (id == 3) { // nếu là chữ số hàng trăm thì in thêm hundred
+            cout << " hundred";
             cnt += 7;
             id = 0;
-            if (!flag1 || !flag2) {
+            if (!flag1 || !flag2) { // nếu tồn tại từ thể hiện hàng đơn vị hoặc hàng chục thì in thêm and
                 cout << " and ";
                 cnt += 3;
             }
         }
     }
-    cout << " ; " << cnt;
 }
 
 int main() {
@@ -79,5 +77,6 @@ int main() {
         toLetter(i);
         cout << endl;
     }
+    cout << cnt + 11; // cộng thêm 11 đơn vị của từ one thousand
     return 0;
 }
