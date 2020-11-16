@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/// declare two array with size 1000 to store all digit of each
+/// declare two 1000-element arrays to store all digits of each
 /// two consecutive elements in Fibonacci sequence during calculate process
 int a[1000], b[1000];
 
