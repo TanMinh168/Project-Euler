@@ -5,15 +5,17 @@ int a[10];
 int main() {
     ios::sync_with_stdio(false); cin.tie(0);
     cout.tie(0);
-    // lưu dãy số 0->9 vào mảng
+    /// initiate an array contains all one-digit numbers
     for (int i = 0; i < 10; i++) {
         a[i] = i;
     }
-    int count = 0; // biến đếm
+    /// initiate variable count
+    int count = 0;
     do {
+        /// increase value of count by 1
         ++count;
         if (count == 1e6) {
-            // in ra hoán vị thứ 1000000 của mảng
+            /// print out the permutation 1000000th of the beginning array and break
             for (int i = 0; i < 10; i++) {
                 cout << a[i];
             }
