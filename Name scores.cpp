@@ -1,19 +1,15 @@
-#include <iostream>
-#include <ctime>
-#include <fstream>
-#include <vector>
-#include <algorithm>
-#include <string>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-
-int sum (string str) {
+/// calculate the sum of all the letter in a name
+int sum(string str) {
+    /// initiate the total = 0
     int total = 0;
 
-    for (unsigned int i = 0; i < str.size (); i++)
-        if (isalpha (str[i]))
-            total += tolower (str[i]) - 96;
+    /// add integer value of each letter to the total
+    for (int i = 0; i < str.size (); i++)
+        if (isalpha(str[i]))
+            total += tolower(str[i]) - 96;
 
     return total;
 }
@@ -26,25 +22,22 @@ int main() {
     vector<string> v;
 
 
-    // đọc file
+    /// read file contains the list of unordered names
     file.open ("names.txt");
 
-    while (!file.eof ())
-    {
+    while (!file.eof ()) {
         v.resize (v.size () + 1);
-        count = 0;
-        ch = file.get ();
+        ch = file.get();
         while (ch != ',' && !file.eof ()) {
             v[v.size () - 1] += ch;
-            ch = file.get ();
-            count++;
+            ch = file.get();
         }
     }
 
-    // sắp xếp tên theo thứ tự từ điển
+    /// sort the list of names into alphabetical order
     sort (v.begin (), v.end ());
 
-    // tính điểm cho từng tên
+    /// calculate the score for each name
     for (unsigned int i = 0; i < v.size (); i++)
         total += (i + 1) * sum (v[i]);
 
